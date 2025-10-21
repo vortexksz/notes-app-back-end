@@ -5,10 +5,17 @@ const routes = [
         method: 'POST',
         path: '/notes',
         handler: addNoteHandler,
+
+        options: {
+           payload: {
+            parse: true,
+            allow: ['application/json'],
+           },
+        },
+        
     },
 
     {
-
         method: 'GET',
         path: '/notes',
         handler: getALLNotesHandler,
@@ -24,6 +31,12 @@ const routes = [
         method: 'PUT',
         path: '/notes/{id}',
         handler: editNoteByIdHandler,
+        options: {
+         payload: {
+           parse: true,
+           allow: ['application/json'],
+         },
+       },
     },
 
     {
